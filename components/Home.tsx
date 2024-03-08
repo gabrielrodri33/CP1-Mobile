@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <View style={style.container}>
       <View style={style.container_item}>
-        <View>
+        <View style={style.image_price}>
           <Image
-            source={require("../img/produto (1).png")}
+            source={require("../img/ps4.png")}
             style={style.tam_image}
           ></Image>
           <Text style={style.price}>R$2.000,00</Text>
@@ -41,6 +41,7 @@ const style = StyleSheet.create({
   },
   price: {
     fontSize: 23,
+    // marginVertical: 10,
   },
   desc: {
     marginRight: 3,
@@ -53,7 +54,12 @@ const style = StyleSheet.create({
     alignItems: 'center',
     padding: 3,
     flexDirection: "row",
-    backgroundColor: "#fafaaa",
+    backgroundColor: "#F8F8FF",
+  },
+  image_price:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: width * 0.04,
   },
   tam_image: {
     marginTop: 5,
@@ -61,6 +67,7 @@ const style = StyleSheet.create({
     height: width * 0.25,
   },
   tam_stars: {
+    marginLeft: width * 0.1,
     marginVertical: 10,
     // width: 'auto',
     aspectRatio: 5,
