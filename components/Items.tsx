@@ -75,6 +75,6 @@ const style = StyleSheet.create({
   container: {
     marginTop: 5,
     marginHorizontal: width * 0.01,
-    paddingHorizontal: 8,
+    paddingHorizontal: width * 0.1,
   },
 });
