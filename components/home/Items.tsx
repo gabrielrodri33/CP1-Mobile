@@ -17,7 +17,7 @@ export default props => {
             {props.desc}
         </Text>
         <Image
-          source={require("../img/five_stars.png")}
+          source={require("../../img/five_stars.png")}
           style={style.tam_stars}
         ></Image>
       </View>
