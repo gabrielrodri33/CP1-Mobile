@@ -1,15 +1,15 @@
-import { StyleSheet, ScrollView, View, SafeAreaView } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Footer from './components/footer';
 import Home from "./components/Home";
 
 export default function App() {
   return (
-    <ScrollView>
-      <View>
-        <SafeAreaView>
-          <Home />
-        </SafeAreaView>
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <Home />
+      <Footer></Footer>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
