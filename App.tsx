@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 <<<<<<< HEAD
@@ -29,6 +30,16 @@ import Header from "./components/header/index";
 
 export default function App() {
   return (
+=======
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import Home from "./components/home/index";
+import Footer from "./components/footer/index";
+import Header from "./components/header/index";
+
+export default function App() {
+  return (
+>>>>>>> e35155e6e9a587afa467d0dfd5b03eade5a492c6
     <ScrollView>
       <SafeAreaView>
         <View style={styles.container}>
@@ -39,7 +50,10 @@ export default function App() {
         </View>
       </SafeAreaView>
     </ScrollView>
+<<<<<<< HEAD
 >>>>>>> d7cc050 (Corrigido todos os bugs de Merge)
+=======
+>>>>>>> e35155e6e9a587afa467d0dfd5b03eade5a492c6
   );
 }
 
