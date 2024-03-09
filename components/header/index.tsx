@@ -13,24 +13,25 @@ export default function Header() {
   return (
     <ScrollView>
       <View style={styles.header}>
-        <View style={styles.searchBar}>
-          <Text> Text </Text>
+        <View style={styles.container}>
+          <Image
+            style={styles.userIcon}
+            width={undefined}
+            height={undefined}
+            source={require("../../img/user.png")}
+          />
+
+          <View style={styles.searchBar}>
+            <Text style={styles.searchBarText}>Digite aqui</Text>
+          </View>
+
+          <Image
+            style={styles.shopCarIcon}
+            width={undefined}
+            height={undefined}
+            source={require("../../img/carrinho.png")}
+          />
         </View>
-
-        <Image
-          style={styles.img}
-          width={undefined}
-          height={undefined}
-          source={require("../../img/carrinho.png")}
-        />
-
-        <Image
-          style={styles.img}
-          width={undefined}
-          height={undefined}
-          source={require("../../img/user.png")}
-        />
-        
       </View>
     </ScrollView>
   );
@@ -39,19 +40,13 @@ export default function Header() {
 const styles = StyleSheet.create({
   header: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    paddingTop: 25,
-    flex: 1,
-    width: "100%",
-    height: 80,
-    flexDirection: "row",
     backgroundColor: "powderblue",
-    justifyContent: "space-evenly",
     borderColor: "powderblue",
-    borderRadius: 20,
+    borderRadius: 40,
   },
   container: {
     margin: 15,
-    justifyContent: "flex-start",
+    justifyContent: "space-evenly",
     alignItems: "center",
     flexDirection: "row",
     width: "90%",
@@ -59,14 +54,21 @@ const styles = StyleSheet.create({
   searchBar: {
     width: 250,
     height: 30,
-    borderColor: "black",
-    backgroundColor: "white",
     borderWidth: 1,
     borderRadius: 10,
+    borderColor: "black",
+    backgroundColor: "white",
     justifyContent: "center",
   },
-  img: {
-    width: 25,
-    height: 25,
+  searchBarText: {
+    marginLeft: 10
   },
+  userIcon: {
+    width: 40,
+    height: 40,
+  },
+  shopCarIcon: {
+    width: 30,
+    height: 30,
+  }
 });
