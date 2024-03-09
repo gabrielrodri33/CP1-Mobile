@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 <<<<<<< HEAD
@@ -19,6 +20,26 @@ export default function App() {
 >>>>>>> d6e7677 (Componentização do Header)
       <StatusBar style="auto" />
     </View>
+=======
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import Home from "./components/home/index";
+import Footer from "./components/footer/index";
+import Header from "./components/header/index";
+
+export default function App() {
+  return (
+    <ScrollView>
+      <SafeAreaView>
+        <View style={styles.container}>
+          <Header />
+          <Home />
+          <Footer />
+          <StatusBar style="auto" />
+        </View>
+      </SafeAreaView>
+    </ScrollView>
+>>>>>>> d7cc050 (Corrigido todos os bugs de Merge)
   );
 }
 
