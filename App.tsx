@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import Home from "./components/home/index";
 import Header from "./components/header/index";
+import Footer from "./components/footer";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <View style={styles.container}>
           <Header />
           <Home />
+          <Footer/>
           <StatusBar />
         </View>
       </SafeAreaView>
