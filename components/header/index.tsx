@@ -7,6 +7,7 @@ import {
   StatusBar,
   Platform,
   Image,
+  Dimensions
 } from "react-native";
 
 export default function Header() {
@@ -15,10 +16,10 @@ export default function Header() {
       <View style={styles.header}>
         <View style={styles.container}>
           <Image
-            style={styles.userIcon}
+            style={styles.menuIcon}
             width={undefined}
             height={undefined}
-            source={require("../../img/user.png")}
+            source={require("../../img/menu.png")}
           />
 
           <View style={styles.searchBar}>
@@ -36,39 +37,42 @@ export default function Header() {
     </ScrollView>
   );
 }
+const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   header: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     backgroundColor: "powderblue",
     borderColor: "powderblue",
-    borderRadius: 40,
+    borderRadius: width * 0.1,
   },
   container: {
-    margin: 15,
+    margin: width * 0.04,
     justifyContent: "space-evenly",
     alignItems: "center",
     flexDirection: "row",
     width: "90%",
   },
   searchBar: {
-    width: 250,
-    height: 30,
-    borderWidth: 1,
-    borderRadius: 10,
+    width: width * 0.65,
+    height: width * 0.07,
+    marginLeft: width * 0.04,
+    marginRight: width * 0.02,
+    borderWidth: width * 0.004,
+    borderRadius: width * 0.04,
     borderColor: "black",
     backgroundColor: "white",
     justifyContent: "center",
   },
   searchBarText: {
-    marginLeft: 10
+    marginLeft: width * 0.04,
   },
-  userIcon: {
-    width: 40,
-    height: 40,
+  menuIcon: {
+    aspectRatio: 1,
+    width: width * 0.09,
   },
   shopCarIcon: {
-    width: 30,
-    height: 30,
+    aspectRatio: 1,
+    width: width * 0.09,
   }
 });
