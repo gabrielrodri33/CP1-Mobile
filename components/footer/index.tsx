@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "powderblue",
     padding: 20,
-    alignItems: "flex-end",
   },
   container: {
     flexDirection: "row",
