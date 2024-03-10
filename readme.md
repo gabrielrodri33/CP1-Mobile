@@ -4,7 +4,7 @@ Este repositório é um trabalho da matéria de Mobile Application Development d
 
 ### 🚀 Iniciar
 
-Para a vizualização do app abra o terminal em uma pasta desejada e siga o passo a passo abaixo
+Para a visualização do app abra o terminal em uma pasta desejada e siga o passo a passo abaixo
 
 Use o comando:
 
