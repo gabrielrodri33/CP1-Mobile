@@ -13,7 +13,7 @@ export default function App() {
   return (
     <ScrollView>
       <SafeAreaView>
-        <View style={styles.container}>
+        <View  style={styles.container}>
           <Header />
           <Home />
           <Footer/>
@@ -27,7 +27,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#272727",
     alignItems: "center",
     justifyContent: "center",
   },

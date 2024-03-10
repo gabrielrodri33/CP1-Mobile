@@ -42,8 +42,8 @@ const { width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   header: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight * 0.5 : 0,
-    backgroundColor: "powderblue",
-    borderColor: "powderblue",
+    backgroundColor: "#6495ed",
+    borderColor: "#6495ed",
     borderRadius: width * 0.1,
   },
   container: {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   menuIcon: {
     aspectRatio: 1,
-    width: width * 0.09,
+    width: width * 0.06,
   },
   shopCarIcon: {
     aspectRatio: 1,

@@ -36,6 +36,7 @@ import {
   const style = StyleSheet.create({
     title_item: {
       fontSize: 17,
+      color: "white",
     },
     text_container: {
       alignItems: 'center',
@@ -44,11 +45,12 @@ import {
     },
     price: {
       fontSize: 23,
-      // marginVertical: 10,
+      color: "white",
     },
     desc: {
       fontSize: 13,
       marginRight: 3,
+      color: "white",
     },
     container_item: {
       width: width * 0.93,
@@ -58,7 +60,7 @@ import {
       alignItems: 'center',
       padding: 3,
       flexDirection: "row",
-      backgroundColor: "#F8F8FF",
+      backgroundColor: "#1d1d1d",
     },
     image_price:{
       width: width * 0.35,
@@ -72,9 +74,7 @@ import {
       height: width * 0.25,
     },
     tam_stars: {
-      marginLeft: width * 0.1,
       marginVertical: 10,
-      // width: 'auto',
       aspectRatio: 5,
       height: width * 0.04,
     },
@@ -83,4 +83,5 @@ import {
       marginHorizontal: width * 0.01,
       paddingHorizontal: width * 0.1,
     },
-  });
+  }
+);

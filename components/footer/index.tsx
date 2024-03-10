@@ -14,13 +14,13 @@ export default function Footer() {
 
           <View style={styles.socialMedia}>
             <Image
-              style={styles.img}
+              style={[styles.img, styles.github]}
               height={undefined}
               width={undefined}
               source={require("../../img/github-logo.png")}
             />
             <Image
-              style={styles.img}
+              style={[styles.img, styles.linkedin]}
               height={undefined}
               width={undefined}
               source={require("../../img/linkedin.png")}
@@ -28,18 +28,18 @@ export default function Footer() {
           </View>
         </View>
         <View style={styles.item}>
-          <Text>Gabriel Siqueira Rodrigues</Text>
-          <Text>RM: 550548</Text>
+          <Text>Gabriel Siqueira</Text>
+          <Text>RM: 98626</Text>
 
           <View style={styles.socialMedia}>
             <Image
-              style={styles.img}
+              style={[styles.img, styles.github]}
               height={undefined}
               width={undefined}
               source={require("../../img/github-logo.png")}
             />
             <Image
-              style={styles.img}
+              style={[styles.img, styles.linkedin]}
               height={undefined}
               width={undefined}
               source={require("../../img/linkedin.png")}
@@ -55,19 +55,22 @@ const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   footer: {
-    width: "100%",
-    backgroundColor: "powderblue",
-    padding: width * 0.03,
+    paddingVertical: width * 0.04,
+    width: width,
+    backgroundColor: "#6495ed",
+    // padding: width * 0.03,
   },
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     gap: width * 0.04,
+    width: width,
   },
   item: {
     alignItems: "center",
     alignContent: "center",
+    width: width * 0.3
   },
   img: {
     aspectRatio: 1,
@@ -78,7 +81,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: width * 0.03,
   },
+  github:{
+    borderRadius: width * 0.1,
+    backgroundColor: 'white',
+  },
+  linkedin:{
+    borderRadius: width * 0.01,
+    backgroundColor: 'white',
+  },
   text: {
-    fontSize: width * 0.05,
+    fontSize: width * 0.04,
   },
 });

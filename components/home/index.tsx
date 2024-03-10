@@ -59,8 +59,8 @@ import {
   
   const style = StyleSheet.create({
     container: {
-      marginTop: 5,
+      marginTop: width * 0.02,
       marginHorizontal: width * 0.01,
-      paddingHorizontal: 8,
+      paddingHorizontal: width * 0.01,
     },
   });
