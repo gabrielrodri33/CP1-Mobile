@@ -8,7 +8,6 @@ import {
   Platform,
   Image,
   Dimensions
-  Dimensions
 } from "react-native";
 
 export default function Header() {
@@ -42,14 +41,12 @@ const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight * 0.5 : 0,
     backgroundColor: "powderblue",
     borderColor: "powderblue",
     borderRadius: width * 0.1,
-    borderRadius: width * 0.1,
   },
   container: {
-    margin: width * 0.04,
     margin: width * 0.04,
     justifyContent: "space-evenly",
     alignItems: "center",
@@ -69,15 +66,12 @@ const styles = StyleSheet.create({
   },
   searchBarText: {
     marginLeft: width * 0.04,
-    marginLeft: width * 0.04,
   },
   menuIcon: {
     aspectRatio: 1,
     width: width * 0.09,
   },
   shopCarIcon: {
-    aspectRatio: 1,
-    width: width * 0.09,
     aspectRatio: 1,
     width: width * 0.09,
   }
