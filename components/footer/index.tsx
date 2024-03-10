@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import React from "react";
 
 export default function Footer() {
@@ -6,7 +6,7 @@ export default function Footer() {
     <View style={styles.footer}>
       <View style={styles.container}>
         <View style={styles.item}>
-            <Text style={styles.text}>Developed by:</Text>
+          <Text style={styles.text}>Developed by:</Text>
         </View>
         <View>
           <View style={styles.item}>
@@ -34,7 +34,7 @@ export default function Footer() {
             <Text>RM: 550548</Text>
           </View>
           <View style={styles.socialMedia}>
-            <Image 
+            <Image
               style={styles.img}
               height={undefined}
               width={undefined}
@@ -53,33 +53,34 @@ export default function Footer() {
   );
 }
 
+const { width } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
   footer: {
     width: "100%",
     backgroundColor: "powderblue",
-    padding: 20,
+    padding: width * 0.03,
   },
   container: {
     flexDirection: "row",
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
     alignItems: "center",
-    gap: 30,
+    gap: width * 0.04,
   },
   item: {
-    marginTop: 5,
+    marginTop: width * 0.01,
     alignItems: "center",
   },
   img: {
-    width: 15,
-    height: 15,
+    aspectRatio: 1,
+    width: width * 0.05,
   },
   socialMedia: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 10
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: width * 0.03,
   },
   text: {
-    fontSize: 20,
-  }
-
+    fontSize: width * 0.05,
+  },
 });
