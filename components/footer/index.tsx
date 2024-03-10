@@ -8,11 +8,10 @@ export default function Footer() {
         <View style={styles.item}>
           <Text style={styles.text}>Developed by:</Text>
         </View>
-        <View>
-          <View style={styles.item}>
-            <Text>Juan de Godoy</Text>
-            <Text>RM: 551408</Text>
-          </View>
+        <View style={styles.item}>
+          <Text>Juan de Godoy</Text>
+          <Text>RM: 551408</Text>
+
           <View style={styles.socialMedia}>
             <Image
               style={styles.img}
@@ -28,11 +27,10 @@ export default function Footer() {
             />
           </View>
         </View>
-        <View>
-          <View style={styles.item}>
-            <Text>Gabriel Siqueira Rodrigues</Text>
-            <Text>RM: 550548</Text>
-          </View>
+        <View style={styles.item}>
+          <Text>Gabriel Siqueira Rodrigues</Text>
+          <Text>RM: 550548</Text>
+
           <View style={styles.socialMedia}>
             <Image
               style={styles.img}
@@ -68,8 +66,8 @@ const styles = StyleSheet.create({
     gap: width * 0.04,
   },
   item: {
-    marginTop: width * 0.01,
     alignItems: "center",
+    alignContent: "center",
   },
   img: {
     aspectRatio: 1,

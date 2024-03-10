@@ -5,7 +5,7 @@ import Footer from './components/footer';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Footer></Footer>
+      <Footer/>
       <StatusBar style="auto" />
     </View>
   );
