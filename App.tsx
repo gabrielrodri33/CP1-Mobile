@@ -5,6 +5,7 @@ import {
   View,
   StatusBar
 } from "react-native";
+import Home from "./components/home/index";
 import Header from "./components/header/index";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <SafeAreaView>
         <View style={styles.container}>
           <Header />
+          <Home />
           <StatusBar />
         </View>
       </SafeAreaView>

@@ -4,7 +4,7 @@ import {
     Dimensions
   } from "react-native";
   import React from "react";
-  import Items from "./Items";
+  import Items from "./item";
   
   export default function Home() {
     return (
