@@ -5,18 +5,17 @@ import {
   View,
   StatusBar
 } from "react-native";
-import Home from "./components/home/index";
+import Produtos from "./screens/produtos/index";
 import Header from "./components/header/index";
 import Footer from "./components/footer";
+import Contatos from "./screens/contatos/index";
 
 export default function App() {
   return (
     <ScrollView>
       <SafeAreaView>
         <View  style={styles.container}>
-          <Header />
-          <Home />
-          <Footer/>
+          <Contatos />
           <StatusBar />
         </View>
       </SafeAreaView>
@@ -27,7 +26,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#272727",
+    // backgroundColor: "#272727",
     alignItems: "center",
     justifyContent: "center",
   },

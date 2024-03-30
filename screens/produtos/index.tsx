@@ -4,9 +4,9 @@ import {
     Dimensions
   } from "react-native";
   import React from "react";
-  import Items from "./item";
+  import Items from "../../components/produtos/item";
   
-  export default function Home() {
+  export default function Produtos() {
     return (
       <View style={style.container}>
   
