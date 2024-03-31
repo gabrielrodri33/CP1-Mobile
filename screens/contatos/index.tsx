@@ -1,21 +1,36 @@
-import { StyleSheet, Text, View, SafeAreaView, Platform, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Platform,
+  StatusBar,
+  ScrollView,
+} from "react-native";
 import React from "react";
 
-import Card from "../../components/contatos/card"
+import Card from "../../components/contatos/card";
+import Incard from "../../components/contatos/incard";
 
 export default function Contatos() {
   return (
     <SafeAreaView style={styles.safeAreaView}>
-      <View style={styles.container}>
-        <Text>Pagina Contatos</Text>
-        <Card 
-          profilePic = "Foto"
-          nome = "Juan"
-          rm = "rm551408"
-          turma = "2TDSPF"
-        />
-        <Text>Fim do card</Text>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Card
+            profilePic={require("../../img/gabriel-author.jpg")}
+            nome="Gabriel Siqueira Rodrigues"
+            rm="98626"
+            turma="2TDSPF"
+          />
+          <Incard
+            profilePic={require("../../img/juan-author.jpg")}
+            nome="Juan de Godoy"
+            rm="551408"
+            turma="2TDSPF"
+          />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
