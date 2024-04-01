@@ -16,10 +16,10 @@ Entre na pasta do projeto:
 ```
 cd CP1-Mobile
 ```
-Faça a instalação do npm
+Instalação das dependências: 
 
 ```
-npm install
+npm install && npm install @react-navigation/native && npm install react-native-gesture-handler react-native-reanimated && npm install @react-navigation/drawer
 ```
 
 Inicialize o expo

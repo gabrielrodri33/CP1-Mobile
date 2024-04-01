@@ -3,27 +3,26 @@ import {
   ScrollView,
   StyleSheet,
   View,
-  StatusBar
+  StatusBar,
+  Platform,
+  Text
 } from "react-native";
-import Produtos from "./screens/produtos/index";
-import Header from "./components/header/index";
-import Footer from "./components/footer";
-import Contatos from "./screens/contatos/index";
 
-export default function App() {
+import { Routes } from "./src/routes/index";
+
+export default function Apl() {
   return (
-    <ScrollView>
-      <SafeAreaView>
-        <View  style={styles.container}>
-          <Contatos />
-          <StatusBar />
-        </View>
-      </SafeAreaView>
-    </ScrollView>
+    <SafeAreaView style={styles.viewSafeAndroid}>
+      <Routes/>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  viewSafeAndroid: {
+    flex: 1,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight * 0.2 : 0,
+  },
   container: {
     flex: 1,
     // backgroundColor: "#272727",
