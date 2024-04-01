@@ -25,11 +25,11 @@ export default (props) => {
         <View style={styles.socialMedia}>
           <Image
             style={styles.icon}
-            source={require("../../img/github-logo.png")}
+            source={require("../../../img/github-logo.png")}
           />
           <Image
             style={styles.icon}
-            source={require("../../img/linkedin.png")}
+            source={require("../../../img/linkedin.png")}
           />
         </View>
       </View>
