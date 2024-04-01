@@ -19,7 +19,7 @@ cd CP1-Mobile
 Instalação das dependências: 
 
 ```
-npm install && npm install react-native-gesture-handler react-native-reanimated && npm install @react-navigation/drawer
+npm install && npm install @react-navigation/native && npm install react-native-gesture-handler react-native-reanimated && npm install @react-navigation/drawer
 ```
 
 Inicialize o expo
