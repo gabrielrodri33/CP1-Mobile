@@ -7,10 +7,25 @@ import {
   Dimensions,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import dbUsers from "../../data/db_users.json"
 
 export default function Login() {
-  const [user, setUser] = useState({  });
+  // useEffect(()=>{
+  //   console.log(DB)
+  // });
 
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleChange = (name, value) => {
+    setUser({ ...user, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    
+  };
   return (
     <View style={styles.container}>
       <View>
@@ -20,21 +35,22 @@ export default function Login() {
       <TextInput
         style={styles.txtInput}
         placeholder="Username"
+        value={user.username}
         autoFocus
+        onChangeText={(value) => handleChange("username", value)}
       ></TextInput>
       <TextInput
         style={styles.txtInput}
         placeholder="Password"
-        value={user} 
+        value={user.password}
         secureTextEntry
-        onChangeText={(value)=>setUser(value)}
+        onChangeText={(value) => handleChange("password", value)}
       ></TextInput>
-
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
         <Text style={{ color: "white", fontSize: 15 }}>LOGIN</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity></TouchableOpacity>
+      <TouchableOpacity>
         <Text style={{ color: "black", fontSize: 15 }}>
           Não possui um Login? CADASTRE-SE
         </Text>
