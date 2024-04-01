@@ -18,13 +18,13 @@ export default function Contatos() {
       <ScrollView>
         <View style={styles.container}>
           <Card
-            profilePic={require("../../img/gabriel-author.jpg")}
+            profilePic={require("../../../img/gabriel-author.jpg")}
             nome="Gabriel Siqueira Rodrigues"
             rm="98626"
             turma="2TDSPF"
           />
           <Incard
-            profilePic={require("../../img/juan-author.jpg")}
+            profilePic={require("../../../img/juan-author.jpg")}
             nome="Juan de Godoy"
             rm="551408"
             turma="2TDSPF"
