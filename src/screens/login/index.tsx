@@ -6,14 +6,15 @@ import {
   TextInput,
   Dimensions,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function Login() {
-  useEffect(() => {
-    initLogin()
-    console.log(user)
-  });
+export default function Login({ navigation }) {
+  // useEffect(() => {
+  // initLogin()
+  //   console.log(user);
+  // });
 
   const [user, setUser] = useState({
     username: "",
@@ -25,21 +26,30 @@ export default function Login() {
   };
 
   async function handleSubmit() {
-    const answer = await AsyncStorage.getItem("Local");
+    if ((await AsyncStorage.getItem("Local")) !== null) {
+      let answer = await AsyncStorage.getItem("Local");
+      let local = JSON.parse(answer);
 
-    console.log(answer)
-    
+      if (
+        local.username === user.username &&
+        local.password === user.password
+      ) {
+        alert("Login efetuado com sucesso!");
+        navigation.navigate("Produtos");
+      } else {
+        alert("Username ou senha incorretos!");
+      }
+    }
+  }
 
-  };
+  // async function initLogin() {
+  //   let local = {
+  //     username: "Juan",
+  //     password: "Gabriel"
+  //   };
+  //   await AsyncStorage.setItem("Local", JSON.stringify(local))
+  // };
 
-  async function initLogin() {
-    let local = {
-      username: "Juan",
-      password: "Gabriel"
-    };
-    await AsyncStorage.setItem("Local", JSON.stringify(local))
-  };
-  
   return (
     <View style={styles.container}>
       <View>
