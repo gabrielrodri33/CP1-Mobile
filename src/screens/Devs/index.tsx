@@ -9,10 +9,10 @@ import {
 } from "react-native";
 import React from "react";
 
-import Card from "../../components/contatos/card";
-import Incard from "../../components/contatos/incard";
+import Card from "../../components/Devs/card";
+import Incard from "../../components/Devs/incard";
 
-export default function Contatos() {
+export default function Devs() {
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <ScrollView>

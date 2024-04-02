@@ -1,6 +1,6 @@
 import { View, StyleSheet, Dimensions, ScrollView } from "react-native";
 import React from "react";
-import Items from "../../components/produtos/item";
+import Items from "../../components/Produtos/item";
 
 export default function Produtos() {
   return (

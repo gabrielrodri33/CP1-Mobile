@@ -2,12 +2,13 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // import { Entypo } from '@expo/vector-icons';
 
-import Produtos from '../screens/produtos/index';
-import Contatos from '../../src/screens/contatos/index';
-import Login from "../../src/screens/login/index";
+import Produtos from '../screens/Produtos/index';
+import Devs from '../screens/Devs/index';
+import LogIn from "../screens/Login/index";
+import LogOut from "../screens/Logout/index";
+import SigIn from "../screens/Sigin";
 
-import { Entypo } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Entypo, AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 const { Screen, Navigator } = createDrawerNavigator();
 
@@ -22,16 +23,32 @@ export default function DrawerRoutes() {
         }}
       />
       <Screen 
-        name = "Login"
-        component={Login}
+        name = "LogIn"
+        component={LogIn}
         options={{ 
           headerTitle: "",
           drawerIcon: ()=> <Entypo name="login" size={24} color="black" />
         }}
       />
       <Screen
-        name = "Contatos"
-        component={Contatos}
+        name = "LogOut"
+        component={LogOut}
+        options={{
+          headerTitle: "", 
+          drawerIcon: ()=> <Entypo name="login" size={24} color="black" />
+        }}
+      />
+      <Screen
+        name = "SigIn"
+        component={SigIn}
+        options={{
+          headerTitle: "", 
+          drawerIcon: ()=> <Entypo name="login" size={24} color="black" />
+        }}
+      />
+      <Screen
+        name = "Devs"
+        component={Devs}
         options={{ 
           drawerIcon: ()=> <MaterialIcons name="contacts" size={24} color="black" />
         }}

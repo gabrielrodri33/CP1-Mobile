@@ -9,7 +9,7 @@ import {
 import React, { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function Login({ navigation }) {
+export default function SigIn({ navigation }) {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -20,30 +20,17 @@ export default function Login({ navigation }) {
   };
 
   async function handleSubmit() {
-    if ((await AsyncStorage.getItem("Local")) !== null) {
-      let answer = await AsyncStorage.getItem("Local");
-      let local = JSON.parse(answer);
-
-      if (local.username !== "" && local.password !== "") {
-        if (
-          local.username === user.username &&
-          local.password === user.password
-        ) {
-          alert("Login efetuado com sucesso!");
-          navigation.navigate("Produtos");
-        } else {
-          alert("Usuario ou senha incorretos!");
-        }
-      } else {
-        alert("Você já fez cadastro?");
-      }
+    if (user.username !== "" && user.password !== "") {
+      await AsyncStorage.setItem("Local", JSON.stringify(user));
+      alert("Cadastro efetuado com êxito");
+      navigation.navigate("LogIn");
     }
   }
 
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.title}>Login</Text>
+        <Text style={styles.title}>SigIn</Text>
       </View>
 
       <TextInput
@@ -66,9 +53,9 @@ export default function Login({ navigation }) {
         <Text style={{ color: "white", fontSize: 15 }}>LOGIN</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => navigation.navigate("SigIn")}>
+      <TouchableOpacity onPress={() => navigation.navigate("LogIn")}>
         <Text style={{ color: "black", fontSize: 15 }}>
-          Não possui um Login? CADASTRE-SE
+          Já possui um cadastro? Faça Login!
         </Text>
       </TouchableOpacity>
     </View>
