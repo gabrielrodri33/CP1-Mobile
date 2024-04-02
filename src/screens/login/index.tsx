@@ -7,12 +7,13 @@ import {
   Dimensions,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import dbUsers from "../../data/db_users.json"
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login() {
-  // useEffect(()=>{
-  //   console.log(DB)
-  // });
+  useEffect(() => {
+    initLogin()
+    console.log(user)
+  });
 
   const [user, setUser] = useState({
     username: "",
@@ -23,9 +24,22 @@ export default function Login() {
     setUser({ ...user, [name]: value });
   };
 
-  const handleSubmit = () => {
+  async function handleSubmit() {
+    const answer = await AsyncStorage.getItem("Local");
+
+    console.log(answer)
     
+
   };
+
+  async function initLogin() {
+    let local = {
+      username: "Juan",
+      password: "Gabriel"
+    };
+    await AsyncStorage.setItem("Local", JSON.stringify(local))
+  };
+  
   return (
     <View style={styles.container}>
       <View>
@@ -39,6 +53,7 @@ export default function Login() {
         autoFocus
         onChangeText={(value) => handleChange("username", value)}
       ></TextInput>
+
       <TextInput
         style={styles.txtInput}
         placeholder="Password"
@@ -46,6 +61,7 @@ export default function Login() {
         secureTextEntry
         onChangeText={(value) => handleChange("password", value)}
       ></TextInput>
+
       <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
         <Text style={{ color: "white", fontSize: 15 }}>LOGIN</Text>
       </TouchableOpacity>
