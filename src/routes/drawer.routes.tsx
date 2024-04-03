@@ -23,7 +23,7 @@ export default function DrawerRoutes() {
         }}
       />
       <Screen 
-        name = "Login"
+        name = "LogIn"
         component={Login}
         options={{ 
           headerTitle: "",
