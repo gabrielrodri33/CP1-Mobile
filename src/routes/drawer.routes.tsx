@@ -2,9 +2,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // import { Entypo } from '@expo/vector-icons';
 
-import Produtos from '../screens/Produtos/index';
+import Produtos from '../screens/Produtos';
 import Devs from '../screens/Devs/index';
-import LogIn from "../screens/Login/index";
+import Login from "../screens/Login";
 import LogOut from "../screens/Logout/index";
 import SigIn from "../screens/Sigin";
 
@@ -23,8 +23,8 @@ export default function DrawerRoutes() {
         }}
       />
       <Screen 
-        name = "LogIn"
-        component={LogIn}
+        name = "Login"
+        component={Login}
         options={{ 
           headerTitle: "",
           drawerIcon: ()=> <Entypo name="login" size={24} color="black" />
