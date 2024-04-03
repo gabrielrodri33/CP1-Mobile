@@ -2,9 +2,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // import { Entypo } from '@expo/vector-icons';
 
-import Produtos from '../screens/Produtos';
+import Produtos from '../screens/produtos';
 import Devs from '../screens/Devs/index';
-import Login from "../screens/Login";
+import Login from "../screens/login";
 import LogOut from "../screens/Logout/index";
 import SigIn from "../screens/Sigin";
 
