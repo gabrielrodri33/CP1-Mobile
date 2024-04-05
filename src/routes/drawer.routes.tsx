@@ -8,13 +8,15 @@ import login from "../screens/login/index";
 import LogOut from "../screens/Logout/index";
 import SigIn from "../screens/Sigin";
 
-import { Entypo, AntDesign, MaterialIcons } from '@expo/vector-icons';
+import { Entypo, AntDesign, MaterialIcons, SimpleLineIcons } from '@expo/vector-icons';
 
 const { Screen, Navigator } = createDrawerNavigator();
 
 export default function DrawerRoutes() {
   return (
-    <Navigator>
+    <Navigator
+      initialRouteName="Produtos"
+    >
       <Screen
         name = "Produtos"
         component={produtos}
@@ -23,6 +25,7 @@ export default function DrawerRoutes() {
         }}
       />
       <Screen 
+        
         name = "LogIn"
         component={login}
         options={{ 
@@ -35,7 +38,7 @@ export default function DrawerRoutes() {
         component={LogOut}
         options={{
           headerTitle: "", 
-          drawerIcon: ()=> <Entypo name="login" size={24} color="black" />
+          drawerIcon: ()=> <SimpleLineIcons name="logout" size={24} color="black" />
         }}
       />
       <Screen
