@@ -7,16 +7,18 @@ import {
   } from "react-native";
   import React from "react";
   
+import { ContainerItem, ImagePrice, Price } from "./style";
+
   export default props => {
     return (
-      <View style={style.container_item}>
-        <View style={style.image_price}>
+      <ContainerItem>
+        <ImagePrice>
           <Image
             source={props.item_image}
             style={style.tam_image}
           ></Image>
-          <Text style={style.price}>{props.price}</Text>
-        </View>
+          <Price>{props.price}</Price>
+        </ImagePrice>
         <View style={style.text_container}>
           <Text style={style.title_item}>{props.title}</Text>
           <Text style={style.desc}>
@@ -27,7 +29,7 @@ import {
             style={style.tam_stars}
           ></Image>
         </View>
-      </View>
+      </ContainerItem>
     );
   };
   
