@@ -1,20 +1,29 @@
 import {
   SafeAreaView,
-  ScrollView,
   StyleSheet,
-  View,
   StatusBar,
   Platform,
-  Text
+  useColorScheme
 } from "react-native";
 
 import { Routes } from "./src/routes/index";
 
+import { ThemeProvider } from "styled-components";
+
+import Theme from "./src/Theme";
+
 export default function Apl() {
+  //dark, light, null, undefined
+  const deviceTheme = useColorScheme();
+
+  const theme = Theme[deviceTheme] || Theme.dark
+
   return (
-    <SafeAreaView style={styles.viewSafeAndroid}>
-      <Routes/>
-    </SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView style={styles.viewSafeAndroid}>
+        <Routes />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
 
