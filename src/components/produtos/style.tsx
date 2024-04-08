@@ -5,7 +5,7 @@ import { Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
 
 export const ContainerItem = styled.View`
-    height: 162px;
+    height: ${width * 0.45}px;
     marginVertical: 10px;
     alignItems: center;
     flexDirection: row;
@@ -18,12 +18,24 @@ export const ImagePrice = styled.View`
     width: ${width * 0.35};
     alignItems: center;
     justifyContent: center;
-    gap: ${width * 0.04};
+    gap: ${width * 0.04}px;
 `
 
 export const Price = styled.Text`
     fontSize: ${width * 0.055}px;
     color: ${props => props.theme.color};
+`
+
+export const ImageTam = styled.Image`
+    marginTop: 5px;
+    width: ${width * 0.25}px;
+    height: ${width * 0.25}px;
+`
+
+export const TextContainer =  styled.View`
+    alignItems: center;
+    flex: 1;
+    marginLeft: 6;
 `
 // const style = StyleSheet.create({
 //   title_item: {
