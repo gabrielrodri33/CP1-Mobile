@@ -35,57 +35,22 @@ export const ImageTam = styled.Image`
 export const TextContainer =  styled.View`
     alignItems: center;
     flex: 1;
-    marginLeft: 6;
+    margin: ${width * 0.01}px;
 `
-// const style = StyleSheet.create({
-//   title_item: {
-//     fontSize: 17,
-//     color: "white",
-//   },
-//   text_container: {
-//     alignItems: 'center',
-//     flex: 1,
-//     marginLeft: 6,
-//   },
-//   price: {
-//     fontSize: 23,
-//     color: "white",
-//   },
-//   desc: {
-//     fontSize: 13,
-//     marginRight: 3,
-//     color: "white",
-//   },
-//   container_item: {
-//     width: width * 0.93,
-//     height: width * 0.45,
-//     marginVertical: 10,
-//     borderRadius: 6,**
-//     alignItems: 'center',
-//     padding: 3,**
-//     flexDirection: "row",
-//     backgroundColor: "#1d1d1d",
-//   },
-//   image_price:{
-//     width: width * 0.35,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     gap: width * 0.04,
-//   },
-//   tam_image: {
-//     marginTop: 5,
-//     width: width * 0.25,
-//     height: width * 0.25,
-//   },
-//   tam_stars: {
-//     marginVertical: 10,
-//     aspectRatio: 5,
-//     height: width * 0.04,
-//   },
-//   container: {
-//     marginTop: 5,
-//     marginHorizontal: width * 0.01,
-//     paddingHorizontal: width * 0.1,
-//   },
-// }
-// );
+
+export const TitleItem = styled.Text`
+    fontSize: ${width * 0.05}px;
+    color: white;
+`
+
+export const ImageStar = styled.Image`
+    marginVertical: ${width * 0.035}px;
+    aspectRatio: 5;
+    height: ${width * 0.04}px;
+`
+
+export const TextDesc = styled.Text`
+    fontSize: ${width * 0.034}px;
+    marginRight: ${width * 0.01}px;
+    color: white;
+`
