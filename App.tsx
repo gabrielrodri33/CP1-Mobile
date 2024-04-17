@@ -1,10 +1,4 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-  Platform,
-  useColorScheme
-} from "react-native";
+import { StyleSheet, useColorScheme, View } from "react-native";
 
 import { Routes } from "./src/routes/index";
 
@@ -16,26 +10,19 @@ export default function Apl() {
   //dark, light, null, undefined
   const deviceTheme = useColorScheme();
 
-  const theme = Theme[deviceTheme] || Theme.dark
+  const theme = Theme[deviceTheme] || Theme.dark;
 
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView style={styles.viewSafeAndroid}>
+      <View style={styles.container}>
         <Routes />
-      </SafeAreaView>
+      </View>
     </ThemeProvider>
   );
-}
+} 
 
 const styles = StyleSheet.create({
-  viewSafeAndroid: {
-    flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight * 0.2 : 0,
-  },
   container: {
     flex: 1,
-    // backgroundColor: "#272727",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

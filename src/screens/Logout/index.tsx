@@ -8,6 +8,12 @@ import {
 import React, { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import {
+  ButtonOpacity,
+  ContainerView,
+  TextLogout
+} from "./style"
+
 export default function LogOut({ navigation }) {
 
   async function localUser() {
@@ -31,11 +37,11 @@ export default function LogOut({ navigation }) {
   }
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.btn} onPress={logOut}>
-        <Text style={{ color: "white", fontSize: 15 }}>LOGOUT</Text>
-      </TouchableOpacity>
-    </View>
+    <ContainerView>
+      <ButtonOpacity onPress={logOut}>
+        <TextLogout>LOGOUT</TextLogout>
+      </ButtonOpacity>
+    </ContainerView>
   );
 }
 

@@ -15,7 +15,7 @@ export const ContainerItem = styled.View`
 `;
 
 export const ImagePrice = styled.View`
-    width: ${width * 0.35};
+    width: ${width * 0.35}px;
     alignItems: center;
     justifyContent: center;
     gap: ${width * 0.04}px;
@@ -23,7 +23,7 @@ export const ImagePrice = styled.View`
 
 export const Price = styled.Text`
     fontSize: ${width * 0.055}px;
-    color: ${props => props.theme.color};
+    color: ${props => props.theme.text};
 `
 
 export const ImageTam = styled.Image`
@@ -52,5 +52,5 @@ export const ImageStar = styled.Image`
 export const TextDesc = styled.Text`
     fontSize: ${width * 0.034}px;
     marginRight: ${width * 0.01}px;
-    color: white;
+    color: ${props => props.theme.text};
 `

@@ -1,12 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Platform,
-  StatusBar,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import React from "react";
 
 import Card from "../../components/Devs/card";
@@ -14,32 +6,26 @@ import Incard from "../../components/Devs/incard";
 
 export default function Devs() {
   return (
-    <SafeAreaView style={styles.safeAreaView}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View style={styles.container}>
-          <Card
-            profilePic={require("../../../img/gabriel-author.jpg")}
-            nome="Gabriel Siqueira Rodrigues"
-            rm="98626"
-            turma="2TDSPF"
-          />
-          <Incard
-            profilePic={require("../../../img/juan-author.jpg")}
-            nome="Juan de Godoy"
-            rm="551408"
-            turma="2TDSPF"
-          />
-        </View>
+        <Card
+          profilePic={require("../../../img/gabriel-author.jpg")}
+          nome="Gabriel Siqueira Rodrigues"
+          rm="98626"
+          turma="2TDSPF"
+        />
+        <Incard
+          profilePic={require("../../../img/juan-author.jpg")}
+          nome="Juan de Godoy"
+          rm="551408"
+          turma="2TDSPF"
+        />
       </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safeAreaView: {
-    flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight * 0.5 : 0,
-  },
   container: {
     flex: 1,
     alignItems: "center",
