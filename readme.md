@@ -19,7 +19,7 @@ cd CP1-Mobile
 Instalação das dependências: 
 
 ```
-npm install && npm install @react-navigation/native && npm install react-native-gesture-handler react-native-reanimated && npm install @react-navigation/drawer && npm install @react-native-async-storage/async-storage
+npm install
 ```
 
 Inicialize o expo
@@ -39,4 +39,4 @@ E pronto para vizualização do projeto no seu celular, lendo o QR Code, ou no e
 * **Gabriel Siqueira Rogrigues** - [Linkedin](https://www.linkedin.com/in/gabrielrodri/)
 * **Juan de Godoy** - [Linkedin](https://github.com/linkParaPerfil) | [Github](github.com/Jixatos)
 
-Você também pode ver a lista de todos os [colaboradores](https://github.com/gabrielrodri33/CP1-Mobile/graphs/contributors) que participaram deste projeto.
+Você também pode ver a lista de todos os [colaboradores](https://github.com/gabrielrodri33/CP1-Mobile/graphs/contributors) que colaboraram deste projeto.
