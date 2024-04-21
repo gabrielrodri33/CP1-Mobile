@@ -1,8 +1,8 @@
 import { StyleSheet, useColorScheme, View } from "react-native";
 
 import { Routes } from "./src/routes/index";
-
 import { ThemeProvider } from "styled-components";
+import { ItensProvider } from "./src/context/ItensContext";
 
 import Theme from "./src/Theme";
 
@@ -14,15 +14,9 @@ export default function Apl() {
 
   return (
     <ThemeProvider theme={theme}>
-      <View style={styles.container}>
+      <ItensProvider>
         <Routes />
-      </View>
+      </ItensProvider>
     </ThemeProvider>
   );
-} 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+}
