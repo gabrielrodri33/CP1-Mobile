@@ -7,43 +7,44 @@ const height = Dimensions.get("window").height;
 
 export const ContainerView = styled.View`
   flex: 1;
-  alignitems: center;
-  justifycontent: center;
+  align-items: center;
+  justify-content: center;
   gap: ${width * 0.03}px;
 `;
+
 export const TextTitle = styled.Text`
-  fontsize: ${width * 0.08}px;
   color: ${(props) => props.theme.text};
+  font-size: 40px;
 `;
 
 export const TxtInput = styled.TextInput`
   width: ${width * 0.7}px;
   height: ${height * 0.075}px;
-  bordercolor: #000000;
-  borderwidth: ${width * 0.01}px;
-  backgroundcolor: ${(props) => props.theme.inputBg};
-  borderradius: ${width * 0.06}px;
-  justifycontent: center;
-  paddingleft: ${width * 0.05}px;
-  fontsize: ${width * 0.06}px;
+  border-color: #000000;
+  border-width: ${width * 0.01}px;
+  background-color: ${(props) => props.theme.inputBg};
+  border-radius: ${width * 0.06}px;
+  justify-content: center;
+  padding-left: ${width * 0.05}px;
+  font-size: ${width * 0.06}px;
 `;
 
 export const ButtonOpacity = styled.TouchableOpacity`
-  borderwidth: 1px;
+  border-width: 1px;
   height: ${height * 0.065}px;
   width: ${width * 0.7}px;
-  borderradius: ${width * 0.06}px;
-  backgroundcolor: blue;
-  justifycontent: center;
-  alignitems: center;
+  border-radius: ${width * 0.06}px;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TextLogin = styled.Text`
   color: ${(props) => props.theme.text};
-  fontsize: 15px;
+  font-size: 15px;
 `;
 
 export const TextCadastrese = styled.Text`
   color: ${(props) => props.theme.text};
-  fontsize: 15px;
+  font-size: 15px;
 `;

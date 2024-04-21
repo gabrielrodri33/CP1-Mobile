@@ -1,12 +1,13 @@
+import React, { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   TouchableOpacity,
   View,
   SafeAreaView,
   useColorScheme,
+  StyleSheet,
+  Dimensions,
 } from "react-native";
-import React, { useState } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
 import {
   ContainerView,
   TextTitle,
@@ -41,8 +42,6 @@ export default function Login({ navigation }) {
         } else {
           alert("Usuario ou senha incorretos!");
         }
-      } else {
-        alert("Você já fez cadastro?");
       }
     }
   }
