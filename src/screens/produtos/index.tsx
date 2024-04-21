@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useColorScheme, FlatList, StyleSheet, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Avatar, ListItem } from "@rneui/base";
@@ -6,14 +6,12 @@ import { Avatar, ListItem } from "@rneui/base";
 import ItensContext from "../../context/ItensContext";
 
 export default function Produtos() {
-  const colorScheme = useColorScheme();
-
   const width = Dimensions.get("window").width;
   const height = Dimensions.get("window").height;
 
+  const colorScheme = useColorScheme();
   const theme = colorScheme === "dark" ? "#363636" : "#fff";
   const textColor = colorScheme === "dark" ? "#fff" : "#000";
-  // style={{ color: textColor }} Estilização para o texto dependendo do theme
 
   const { estado } = useContext(ItensContext);
 

@@ -15,12 +15,11 @@ export default function DrawerRoutes() {
   const colorScheme = useColorScheme();
 
   const themeIcon = colorScheme === "dark" ? "#ffffff" : "#282928";
-
   const themeBg = colorScheme === "dark" ? "#282928" : "#ffffff";
 
   return (
     <Navigator
-      initialRouteName="Produtos"
+      initialRouteName="Devs"
       screenOptions={{
         drawerLabelStyle: {
           color: themeIcon,
