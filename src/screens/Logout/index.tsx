@@ -1,45 +1,43 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from "react-native";
-import React, { useState } from "react";
+import { StyleSheet, Dimensions } from "react-native";
+import React, { useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import { ButtonOpacity, ContainerView, TextLogout } from "./style";
+
 export default function LogOut({ navigation }) {
-
-  async function localUser() {
-    let answer = await AsyncStorage.getItem("Local");
-    let local = JSON.parse(answer);
-    return local
-  }
-
-  const [user, setUser] = useState({
+  let [user, setUser] = useState({
     username: "",
     password: "",
   });
 
+  async function localUser() {
+    let answer = await AsyncStorage.getItem("Local");
+    let local = JSON.parse(answer);
+    setUser(local);
+    return local;
+  }
+
+  useEffect(() => {
+    console.log("LogOut: ", user);
+  }, [user]);
+
   async function logOut() {
-    if ((await AsyncStorage.getItem("Local")) !== null) {
-      await AsyncStorage.setItem("Local", JSON.stringify(user));
-      console.log(localUser())
-      alert("LogOut efetuado com êxito")
-      navigation.navigate("LogIn");
-    }
+    setUser({ ...user, [user.username]: [""], [user.password]: [""] });
+    await AsyncStorage.setItem("Local", JSON.stringify(user));
+    alert("LogOut efetuado com êxito");
+    navigation.navigate("LogIn");
   }
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.btn} onPress={logOut}>
-        <Text style={{ color: "white", fontSize: 15 }}>LOGOUT</Text>
-      </TouchableOpacity>
-    </View>
+    <ContainerView>
+      <ButtonOpacity onPress={logOut}>
+        <TextLogout>LOGOUT</TextLogout>
+      </ButtonOpacity>
+    </ContainerView>
   );
 }
 
-const width = Dimensions.get("window").width;
+const { width } = Dimensions.get("window");
 const height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({

@@ -1,19 +1,31 @@
-import {
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  View,
-  TextInput,
-  Dimensions,
-} from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  TouchableOpacity,
+  View,
+  SafeAreaView,
+  useColorScheme,
+} from "react-native";
+import {
+  ContainerView,
+  TextTitle,
+  TxtInput,
+  TextLogin,
+  ButtonOpacity,
+  TextCadastrese,
+} from "./style";
+
+import DataUsers from "../../data/dataUsers";
 
 export default function Login({ navigation }) {
-  const [user, setUser] = useState({
+  let [user, setUser] = useState({
     username: "",
     password: "",
   });
+
+  useEffect(() => {
+    console.log("Login: ", user)
+  }, [user]);
 
   const handleChange = (name, value) => {
     setUser({ ...user, [name]: value });
@@ -34,78 +46,43 @@ export default function Login({ navigation }) {
         } else {
           alert("Usuario ou senha incorretos!");
         }
-      } else {
-        alert("Você já fez cadastro?");
       }
     }
   }
 
+  const colorScheme = useColorScheme();
+
+  const theme = colorScheme === "dark" ? "#282928" : "#fff";
+
   return (
-    <View style={styles.container}>
-      <View>
-        <Text style={styles.title}>Login</Text>
-      </View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme }}>
+      <ContainerView>
+        <View>
+          <TextTitle>Login</TextTitle>
+        </View>
 
-      <TextInput
-        style={styles.txtInput}
-        placeholder="Username"
-        value={user.username}
-        autoFocus
-        onChangeText={(value) => handleChange("username", value)}
-      ></TextInput>
+        <TxtInput
+          placeholder="Username"
+          value={user.username}
+          autoFocus
+          onChangeText={(value) => handleChange("username", value)}
+        ></TxtInput>
 
-      <TextInput
-        style={styles.txtInput}
-        placeholder="Password"
-        value={user.password}
-        secureTextEntry
-        onChangeText={(value) => handleChange("password", value)}
-      ></TextInput>
+        <TxtInput
+          placeholder="Password"
+          value={user.password}
+          secureTextEntry
+          onChangeText={(value) => handleChange("password", value)}
+        ></TxtInput>
 
-      <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
-        <Text style={{ color: "white", fontSize: 15 }}>LOGIN</Text>
-      </TouchableOpacity>
+        <ButtonOpacity onPress={handleSubmit}>
+          <TextLogin>LOGIN</TextLogin>
+        </ButtonOpacity>
 
-      <TouchableOpacity onPress={() => navigation.navigate("SigIn")}>
-        <Text style={{ color: "black", fontSize: 15 }}>
-          Não possui um Login? CADASTRE-SE
-        </Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity onPress={() => navigation.navigate("SigIn")}>
+          <TextCadastrese>Não possui um Login? CADASTRE-SE</TextCadastrese>
+        </TouchableOpacity>
+      </ContainerView>
+    </SafeAreaView>
   );
 }
-
-const width = Dimensions.get("window").width;
-const height = Dimensions.get("window").height;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 15,
-  },
-  title: {
-    fontSize: 30,
-  },
-  txtInput: {
-    width: width * 0.7,
-    height: height * 0.075,
-    borderColor: "#000000",
-    borderWidth: 2,
-    backgroundColor: "white",
-    borderRadius: 20,
-    justifyContent: "center",
-    paddingLeft: 10,
-    fontSize: 20,
-  },
-  btn: {
-    borderWidth: 1,
-    height: height * 0.065,
-    width: width * 0.7,
-    borderRadius: 20,
-    backgroundColor: "blue",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

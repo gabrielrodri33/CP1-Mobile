@@ -6,14 +6,18 @@ import {
   TextInput,
   Dimensions,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function SigIn({ navigation }) {
-  const [user, setUser] = useState({
+  let [user, setUser] = useState({
     username: "",
     password: "",
   });
+
+  useEffect(() => {
+    console.log("SigIn: ", user)
+  }, [user]);
 
   const handleChange = (name, value) => {
     setUser({ ...user, [name]: value });
@@ -22,8 +26,12 @@ export default function SigIn({ navigation }) {
   async function handleSubmit() {
     if (user.username !== "" && user.password !== "") {
       await AsyncStorage.setItem("Local", JSON.stringify(user));
+      let local = await AsyncStorage.getItem("Local");
+      console.log(local); 
       alert("Cadastro efetuado com êxito");
       navigation.navigate("LogIn");
+    } else {
+      alert("Você esqueceu de digitar?");
     }
   }
 
