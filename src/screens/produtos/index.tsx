@@ -26,7 +26,7 @@ export default function Produtos() {
           borderBottomColor: textColor,
         }}
       >
-        <Avatar source={{ uri: item.image }} size={80} />
+        <Avatar source={ item.image } size={80} />
         <ListItem.Content>
           <ListItem.Title style={{ color: textColor }}>
             {item.title}

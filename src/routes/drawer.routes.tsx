@@ -19,7 +19,7 @@ export default function DrawerRoutes() {
 
   return (
     <Navigator
-      initialRouteName="Devs"
+      initialRouteName="Produtos"
       screenOptions={{
         drawerLabelStyle: {
           color: themeIcon,
