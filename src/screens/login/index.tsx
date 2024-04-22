@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   TouchableOpacity,
   View,
   SafeAreaView,
   useColorScheme,
-  StyleSheet,
-  Dimensions,
 } from "react-native";
 import {
   ContainerView,
@@ -17,11 +15,17 @@ import {
   TextCadastrese,
 } from "./style";
 
+import DataUsers from "../../data/dataUsers";
+
 export default function Login({ navigation }) {
-  const [user, setUser] = useState({
+  let [user, setUser] = useState({
     username: "",
     password: "",
   });
+
+  useEffect(() => {
+    console.log("Login: ", user)
+  }, [user]);
 
   const handleChange = (name, value) => {
     setUser({ ...user, [name]: value });
