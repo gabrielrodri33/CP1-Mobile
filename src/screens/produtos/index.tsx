@@ -1,9 +1,22 @@
 import React, { useContext, useEffect } from "react";
-import { useColorScheme, FlatList, StyleSheet, Dimensions } from "react-native";
+import { useColorScheme, FlatList, Dimensions, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Avatar, ListItem } from "@rneui/base";
+import { Rating } from "react-native-elements";
 
 import ItensContext from "../../context/ItensContext";
+
+import {
+  ContainerItem,
+  ImagePrice,
+  Price,
+  ImageTam,
+  TextContainer,
+  TitleItem,
+  ImageStar,
+  TextDesc,
+} from "./style";
+
+import styled from "styled-components/native";
 
 export default function Produtos() {
   const width = Dimensions.get("window").width;
@@ -15,32 +28,30 @@ export default function Produtos() {
 
   const { estado } = useContext(ItensContext);
 
+  const StyledView = styled.View`
+    background-color: black;
+  `;
+
   function getItens({ item }) {
     return (
-      <ListItem
-        containerStyle={{
-          backgroundColor: theme,
-          paddingVertical: height * 0.02,
-          paddingHorizontal: width * 0.03,
-          borderBottomWidth: 1,
-          borderBottomColor: textColor,
-        }}
-      >
-        <Avatar source={ item.image } size={80} />
-        <ListItem.Content>
-          <ListItem.Title style={{ color: textColor }}>
-            {item.title}
-          </ListItem.Title>
-          <ListItem.Subtitle style={{ color: textColor }}>
-            {item.price}
-          </ListItem.Subtitle>
-        </ListItem.Content>
-        <ListItem.Content>
-          <ListItem.Subtitle style={{ color: textColor }}>
-            {item.desc}
-          </ListItem.Subtitle>
-        </ListItem.Content>
-      </ListItem>
+      <ContainerItem>
+        <ImagePrice>
+          <ImageTam source={item.image}></ImageTam>
+          <Price>{item.price}</Price>
+        </ImagePrice>
+        <TextContainer>
+          <TitleItem>{item.title}</TitleItem>
+          
+          {/* <Rating
+            fractions={0.2}
+            startingValue={item.rating}
+            ratingBackgroundColor= "#363636"
+            imageSize={22}
+          /> */}
+          <ImageStar source={require("../../../img/five_stars.png")}></ImageStar>
+          <TextDesc>{item.desc}</TextDesc>
+        </TextContainer>
+      </ContainerItem>
     );
   }
 
