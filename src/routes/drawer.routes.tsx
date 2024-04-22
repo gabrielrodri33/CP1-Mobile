@@ -1,9 +1,9 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { useColorScheme } from "react-native";
 
-import produtos from "../screens/Produtos/index";
+import Produtos from "../screens/Produtos/index";
 import Devs from "../screens/Devs/index";
-import login from "../screens/Login/index";
+import Login from "../screens/Login/index";
 import LogOut from "../screens/Logout/index";
 import SigIn from "../screens/Sigin";
 
@@ -31,7 +31,7 @@ export default function DrawerRoutes() {
     >
       <Screen
         name="Produtos"
-        component={produtos}
+        component={Produtos}
         options={{
           headerShown: false,
           drawerIcon: () => <Entypo name="home" size={24} color={themeIcon} />,
@@ -39,7 +39,7 @@ export default function DrawerRoutes() {
       />
       <Screen
         name="LogIn"
-        component={login}
+        component={Login}
         options={{
           headerShown: false,
           drawerIcon: () => <Entypo name="login" size={24} color={themeIcon} />,
