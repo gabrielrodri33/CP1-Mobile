@@ -48,7 +48,7 @@ export const TextContainer =  styled.View`
 
 export const TitleItem = styled.Text`
     fontSize: ${width * 0.05}px;
-    color: white;
+    color: ${props => props.theme.text};
 `
 
 export const ImageStar = styled.Image`

@@ -1,5 +1,5 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { useColorScheme } from "react-native";
+import { useColorScheme, SafeAreaView } from "react-native";
 
 import Produtos from "../screens/Produtos/index";
 import Devs from "../screens/Devs/index";
@@ -8,6 +8,7 @@ import LogOut from "../screens/Logout/index";
 import SigIn from "../screens/Sigin";
 
 import { Entypo, MaterialIcons, SimpleLineIcons } from "@expo/vector-icons";
+import Header from "../components/Drawer/header";
 
 const { Screen, Navigator } = createDrawerNavigator();
 
@@ -18,61 +19,63 @@ export default function DrawerRoutes() {
   const themeBg = colorScheme === "dark" ? "#282928" : "#ffffff";
 
   return (
-    <Navigator
-      initialRouteName="Produtos"
-      screenOptions={{
-        drawerLabelStyle: {
-          color: themeIcon,
-        },
-        drawerStyle: {
-          backgroundColor: themeBg,
-        },
-      }}
-    >
-      <Screen
-        name="Produtos"
-        component={Produtos}
-        options={{
-          headerShown: false,
-          drawerIcon: () => <Entypo name="home" size={24} color={themeIcon} />,
+      <Navigator
+        initialRouteName="Produtos"
+        screenOptions={{
+          drawerLabelStyle: {
+            color: themeIcon,
+          },
+          drawerStyle: {
+            backgroundColor: themeBg,
+          },
+          header: Header,
         }}
-      />
-      <Screen
-        name="LogIn"
-        component={Login}
-        options={{
-          headerShown: false,
-          drawerIcon: () => <Entypo name="login" size={24} color={themeIcon} />,
-        }}
-      />
-      <Screen
-        name="LogOut"
-        component={LogOut}
-        options={{
-          headerShown: false,
-          drawerIcon: () => (
-            <SimpleLineIcons name="logout" size={24} color={themeIcon} />
-          ),
-        }}
-      />
-      <Screen
-        name="SigIn"
-        component={SigIn}
-        options={{
-          headerShown: false,
-          drawerIcon: () => <Entypo name="login" size={24} color={themeIcon} />,
-        }}
-      />
-      <Screen
-        name="Devs"
-        component={Devs}
-        options={{
-          headerShown: false,
-          drawerIcon: () => (
-            <MaterialIcons name="contacts" size={24} color={themeIcon} />
-          ),
-        }}
-      />
-    </Navigator>
+      >
+        <Screen
+          name="Produtos"
+          component={Produtos}
+          options={{
+            drawerIcon: () => (
+              <Entypo name="home" size={24} color={themeIcon} />
+            ),
+          }}
+        />
+        <Screen
+          name="LogIn"
+          component={Login}
+          options={{
+            drawerIcon: () => (
+              <Entypo name="login" size={24} color={themeIcon} />
+            ),
+          }}
+        />
+        <Screen
+          name="LogOut"
+          component={LogOut}
+          options={{
+            drawerIcon: () => (
+              <SimpleLineIcons name="logout" size={24} color={themeIcon} />
+            ),
+          }}
+        />
+        <Screen
+          name="SigIn"
+          component={SigIn}
+          options={{
+            drawerIcon: () => (
+              <Entypo name="login" size={24} color={themeIcon} />
+            ),
+          }}
+        />
+        <Screen
+          name="Devs"
+          component={Devs}
+          options={{
+            drawerIcon: () => (
+              <MaterialIcons name="contacts" size={24} color={themeIcon} />
+            ),
+          }}
+        />
+      </Navigator>
   );
 }

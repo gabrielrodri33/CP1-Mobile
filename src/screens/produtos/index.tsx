@@ -41,14 +41,16 @@ export default function Produtos() {
         </ImagePrice>
         <TextContainer>
           <TitleItem>{item.title}</TitleItem>
-          
+
           {/* <Rating
             fractions={0.2}
             startingValue={item.rating}
             ratingBackgroundColor= "#363636"
             imageSize={22}
           /> */}
-          <ImageStar source={require("../../../img/five_stars.png")}></ImageStar>
+          <ImageStar
+            source={require("../../../img/five_stars.png")}
+          ></ImageStar>
           <TextDesc>{item.desc}</TextDesc>
         </TextContainer>
       </ContainerItem>
@@ -56,12 +58,10 @@ export default function Produtos() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: theme }}>
-      <FlatList
-        data={estado.DadosItens}
-        renderItem={getItens}
-        keyExtractor={(item) => item.id.toString()}
-      />
-    </SafeAreaView>
+    <FlatList
+      data={estado.DadosItens}
+      renderItem={getItens}
+      keyExtractor={(item) => item.id.toString()}
+    />
   );
 }
